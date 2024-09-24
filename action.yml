@@ -1,0 +1,49 @@
+name: "chatz action"
+description: "Github actions using chatz for github workflow."
+inputs:
+  provider:
+    description: "Provider name should be one of [slack, google, telegram, discord, redis]"
+    required: true
+  web_hook_url:
+    description: "Web Hook URL for google/discord."
+    required: false
+    default: ""
+  token:
+    description: "Token for slack/telegram."
+    required: false
+    default: ""
+  channel_id:
+    description: "Target channel id."
+    required: false
+    default: ""
+  chat_id:
+    description: "Target chat id."
+    required: false
+    default: ""
+  connection_url:
+    description: "Connection URL for redis."
+    required: false
+    default: ""
+  thread_id:
+    description: "Thread id for reply."
+    required: false
+    default: ""
+  message:
+    description: "Message for send."
+    required: true
+  
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.provider }}
+    - ${{ inputs.web_hook_url }}
+    - ${{ inputs.token }}
+    - ${{ inputs.channel_id }}
+    - ${{ inputs.chat_id }}
+    - ${{ inputs.connection_url }}
+    - ${{ inputs.thread_id }}
+    - ${{ inputs.message }}
+branding:
+  icon: "git-commit"
+  color: "green"
