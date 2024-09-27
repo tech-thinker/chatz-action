@@ -24,7 +24,7 @@ To get this required details, go to [chatz](https://github.com/tech-thinker/chat
 ## Usage
 ```yaml
 - name: chatz action
-  uses: tech-thinker/chatz-action@v0.0.1
+  uses: tech-thinker/chatz-action@v1.1.2
   with:
     PROVIDER: "google"
     WEB_HOOK_URL: "${{ secrets.WEB_HOOK_URL }}"
