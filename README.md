@@ -31,3 +31,16 @@ To get this required details, go to [chatz](https://github.com/tech-thinker/chat
     MESSAGE: ${{ github.event.inputs.message }}
 ```
 
+- For failure response
+
+```yaml
+- name: chatz action
+  if: ${{ failure() }}
+  uses: tech-thinker/chatz-action@<version-tag>
+  with:
+    PROVIDER: "google"
+    WEB_HOOK_URL: "${{ secrets.WEB_HOOK_URL }}"
+    MESSAGE: ${{ github.event.inputs.message }}
+    REQUIRED_FAILED: "true"
+```
+

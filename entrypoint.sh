@@ -11,7 +11,8 @@ CHANNEL_ID="$4"
 CHAT_ID="$5"
 CONNECTION_URL="$6"
 THREAD_ID="$7"
-MESSAGE="$8"
+REQUIRED_FAILED=$8
+MESSAGE="$9"
 
 export PROVIDER=$PROVIDER
 export WEB_HOOK_URL=$WEB_HOOK_URL
@@ -21,3 +22,8 @@ export CHAT_ID=$CHAT_ID
 export CONNECTION_URL=$CONNECTION_URL
 
 chatz -o --from-env -t=$THREAD_ID "$MESSAGE"
+
+# Check REQUIRED_FAILED
+if [ "${REQUIRED_FAILED:-false}" = "true" ]; then
+  exit 1
+fi

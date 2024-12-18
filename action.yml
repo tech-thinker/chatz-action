@@ -28,6 +28,10 @@ inputs:
     description: "Thread id for reply."
     required: false
     default: ""
+  required_failed:
+    description: "Exit with an error if the response indicates failure"
+    required: false
+    default: "false"  # Default value is false
   message:
     description: "Message for send."
     required: true
@@ -43,6 +47,7 @@ runs:
     - ${{ inputs.chat_id }}
     - ${{ inputs.connection_url }}
     - ${{ inputs.thread_id }}
+    - ${{ inputs.required_failed_response }}
     - ${{ inputs.message }}
 branding:
   icon: "git-commit"
