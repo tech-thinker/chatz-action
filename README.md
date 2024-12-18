@@ -11,6 +11,7 @@ You can read detail documentation on this repository.
 - `CONNECTION_URL` - Connection URL for redis.
 - `THREAD_ID` - Thread id for reply.
 - `MESSAGE` - Message for send.
+- `REQUIRED_FAILED` - It will throw exit(1) exception, So, no further steps can be executed. If want to continue execution then don't add this variable.
 
 ### Mandatory fields:
 - `PROVIDER`
