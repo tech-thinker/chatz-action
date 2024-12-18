@@ -3,7 +3,7 @@
 set -e  # if a command fails it stops the execution
 set -u  # script fails if trying to access to an undefined variable
 
-echo "Starts"
+# Starts processes
 PROVIDER="$1"
 WEB_HOOK_URL="$2"
 TOKEN="$3"
