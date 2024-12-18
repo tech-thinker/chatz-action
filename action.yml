@@ -47,7 +47,7 @@ runs:
     - ${{ inputs.chat_id }}
     - ${{ inputs.connection_url }}
     - ${{ inputs.thread_id }}
-    - ${{ inputs.required_failed_response }}
+    - ${{ inputs.required_failed }}
     - ${{ inputs.message }}
 branding:
   icon: "git-commit"
