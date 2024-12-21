@@ -31,11 +31,47 @@ inputs:
   required_failed:
     description: "Exit with an error if the response indicates failure"
     required: false
-    default: "false"  # Default value is false
+    default: "false" # Default value is false
+  smtp_host:
+    description: "SMTP server host."
+    required: false
+    default: ""
+  smtp_port:
+    description: "SMTP server port."
+    required: false
+    default: "0"
+  smtp_use_tls:
+    description: "Use TLS flag."
+    required: false
+    default: "false"
+  smtp_use_starttls:
+    description: "Use STARTTLS flag."
+    required: false
+    default: "false"
+  smtp_user:
+    description: "SMTP server login username."
+    required: false
+    default: ""
+  smtp_password:
+    description: "SMTP server login password."
+    required: false
+    default: ""
+  smtp_subject:
+    description: "Email subject."
+    required: false
+    default: ""
+  smtp_from:
+    description: "From email address."
+    required: false
+    default: ""
+  smtp_to:
+    description: "To email address comma saparated."
+    required: false
+    default: ""
   message:
     description: "Message for send."
     required: true
-  
+
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -48,6 +84,15 @@ runs:
     - ${{ inputs.connection_url }}
     - ${{ inputs.thread_id }}
     - ${{ inputs.required_failed }}
+    - ${{ inputs.smtp_host }}
+    - ${{ inputs.smtp_port }}
+    - ${{ inputs.smtp_use_tls }}
+    - ${{ inputs.smtp_use_starttls }}
+    - ${{ inputs.smtp_user }}
+    - ${{ inputs.smtp_password }}
+    - ${{ inputs.smtp_subject }}
+    - ${{ inputs.smtp_from }}
+    - ${{ inputs.smtp_to }}
     - ${{ inputs.message }}
 branding:
   icon: "git-commit"

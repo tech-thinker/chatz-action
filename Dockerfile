@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 RUN apk add --no-cache git curl
 
-RUN curl -sL https://github.com/tech-thinker/chatz/releases/download/v1.1.3/chatz-linux-amd64 -o chatz
+RUN curl -sL https://github.com/tech-thinker/chatz/releases/download/v1.2.0/chatz-linux-amd64 -o chatz
 RUN chmod +x chatz
 RUN mv chatz /usr/bin/
 
